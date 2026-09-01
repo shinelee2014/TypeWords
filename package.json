@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "sync:upstream": "node scripts/sync-upstream.js",
+    "download:dicts": "node scripts/download-full-dicts.js",
     "i18n:write": "gulp i18nWrite",
     "test": ""
   },
