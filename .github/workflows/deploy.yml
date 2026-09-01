@@ -1,4 +1,4 @@
-﻿name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,6 +6,10 @@ on:
       - main
       - master
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Sync Upstream & Auto Deploy"]
+    types:
+      - completed
 
 # 设置 GITHUB_TOKEN 权限以允许部署到 GitHub Pages
 permissions:

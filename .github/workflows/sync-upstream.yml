@@ -1,0 +1,50 @@
+﻿name: Sync Upstream & Auto Deploy
+
+on:
+  schedule:
+    # 每天定时检查并同步上游官方更新 (UTC 20:00 / 北京时间凌晨 04:00)
+    - cron: '0 20 * * *'
+  workflow_dispatch: # 支持在 GitHub 网页上手动一键触发
+
+permissions:
+  contents: write
+
+jobs:
+  sync-upstream:
+    name: Sync Upstream Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Configure Git Identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add and Fetch Upstream
+        run: |
+          git remote add upstream https://github.com/zyronon/TypeWords.git || git remote set-url upstream https://github.com/zyronon/TypeWords.git
+          git fetch upstream master
+
+      - name: Check and Merge Upstream
+        id: sync
+        run: |
+          UPSTREAM_HEAD=$(git rev-parse upstream/master)
+          CURRENT_BASE=$(git merge-base HEAD upstream/master)
+
+          echo "Upstream HEAD: $UPSTREAM_HEAD"
+          echo "Current Base: $CURRENT_BASE"
+
+          if [ "$UPSTREAM_HEAD" = "$CURRENT_BASE" ]; then
+            echo "Already up-to-date with upstream zyronon/TypeWords."
+            echo "has_updates=false" >> $GITHUB_OUTPUT
+          else
+            echo "New commits detected in upstream. Merging..."
+            git merge upstream/master -m "chore(sync): 同步原作者最新版本" --no-edit
+            git push origin master
+            echo "has_updates=true" >> $GITHUB_OUTPUT
+          fi
