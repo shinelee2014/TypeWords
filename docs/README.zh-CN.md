@@ -116,4 +116,11 @@
 
 再次感谢您对项目的贡献！🎉
 
+## ❤️ 支持 TypeWords
+
+如果 TypeWords 对您有所帮助，欢迎赞助项目，支持服务器运行和后续开发。   
+当然，不赞助也完全不影响使用。分享项目、提交反馈或贡献代码，同样是非常宝贵的支持。
+
+<img width="300" height="390" alt="practice words" src="/public/imgs/zhifubao.png" />
+<img width="300" height="390" alt="practice words" src="/public/imgs/weixin.png" />
 

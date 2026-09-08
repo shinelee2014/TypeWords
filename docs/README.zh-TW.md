@@ -100,3 +100,11 @@
 
 再次感謝您對專案的貢獻！
 
+## ❤️ 支持 TypeWords
+
+如果 TypeWords 對您有所幫助，歡迎讚助專案，支持服務器運行和後續開髮。   
+當然，不讚助也完全不影響使用。分享專案、提交反饋或貢獻代碼，同樣是非常寶貴的支持。
+
+<img width="300" height="390" alt="practice words" src="/public/imgs/zhifubao.png" />
+<img width="300" height="390" alt="practice words" src="/public/imgs/weixin.png" />
+

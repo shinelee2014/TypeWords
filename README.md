@@ -99,3 +99,12 @@ If you're interested in this project, we welcome your contributions and will pro
 Before contributing, please communicate with the developers to avoid code conflicts.
 
 Thank you again for your contributions!
+
+
+## ❤️ Support TypeWords
+If TypeWords has been helpful to you, feel free to sponsor the project to support server operation and future development.  
+Of course, sponsorship is not required for use—sharing the project, submitting feedback, or contributing code are also highly valuable forms of support.
+
+<img width="300" height="390" alt="practice words" src="/public/imgs/zhifubao.png" />
+<img width="300" height="390" alt="practice words" src="/public/imgs/weixin.png" />
+
