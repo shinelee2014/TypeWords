@@ -234,37 +234,6 @@ defineRender(() => {
                 </BaseIcon>
                 <BaseIcon
                   disabled={props.readonly}
-                  title={props.readonly ? props.readonlyTip : $t('import')}
-                  onClick={() => !props.readonly && emit('import')}
-                >
-                  <IconSystemUiconsImport />
-                </BaseIcon>
-                {props.readonly ? (
-                  <BaseIcon disabled title={props.readonlyTip}>
-                    <IconPhExportLight />
-                  </BaseIcon>
-                ) : (
-                  <BaseOptionButton
-                    v-slots={{
-                      options: () => (
-                        <div class="flex flex-col gap-2">
-                          <BaseButton class="w-full" onClick={() => emit('exportXlsx')}>
-                            {props.exportXlsxLoading ? <IconEosIconsLoading /> : $t('export_as_xlsx')}
-                          </BaseButton>
-                          <BaseButton class="w-full" onClick={() => emit('exportJson')}>
-                            {props.exportJsonLoading ? <IconEosIconsLoading /> : $t('export_as_json')}
-                          </BaseButton>
-                        </div>
-                      ),
-                    }}
-                  >
-                    <BaseIcon title={$t('export')}>
-                      <IconPhExportLight />
-                    </BaseIcon>
-                  </BaseOptionButton>
-                )}
-                <BaseIcon
-                  disabled={props.readonly}
                   title={props.readonly ? props.readonlyTip : $t('add_word')}
                   onClick={() => !props.readonly && emit('add')}
                 >
