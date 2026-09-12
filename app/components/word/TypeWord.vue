@@ -397,7 +397,7 @@ useEvents([
       </div>
 
       <!-- 笔记编辑区 -->
-      <template v-if="editingNote || store.noteData[word.word]?.trim()">
+      <template v-if="editingNote || store.noteData[word.word]?.trim() && practiceType === WordPracticeType.FollowWrite">
         <div class="flex flex-col gap-2 w-full mt-4">
           <div class="flex">
             <div class="label">笔记</div>
